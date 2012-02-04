@@ -1,0 +1,30 @@
+<VirtualHost *:80>
+  ServerName www.collectorsquest.old
+  ServerAlias collectorsquest.old
+
+  DocumentRoot "/www/vhosts/collectorsquest.old/web"
+  DirectoryIndex index.php
+
+  CustomLog /data/logs/apache2/collectorsquest.old.access.log common
+  ErrorLog /data/logs/apache2/collectorsquest.old.error.log
+
+  <Directory "/www/vhosts/collectorsquest.old/web">
+    AllowOverride All
+    Allow from All
+  </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+  ServerName static.collectorsquest.old
+
+  DocumentRoot "/www/vhosts/static.collectorsquest.old/web"
+  DirectoryIndex index.php
+
+  CustomLog /data/logs/apache2/collectorsquest.old.access.log common
+  ErrorLog /data/logs/apache2/collectorsquest.old.error.log
+
+  <Directory "/www/vhosts/static.collectorsquest.old/web">
+    AllowOverride All
+    Allow from All
+  </Directory>
+</VirtualHost>
