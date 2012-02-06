@@ -2,3 +2,4 @@
 /vhosts/*.dev
 /vhosts/collectorsquest.com/*
 /vhosts/cqcdns.com/*
+/etc/sphinx.running.conf
