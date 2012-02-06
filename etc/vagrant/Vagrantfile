@@ -3,7 +3,7 @@ Vagrant::Config.run do |config|
   config.vm.box_url = "http://collectorsquest.s3.amazonaws.com/virtualbox/collectorsquest.2012-02-06.box"
 
   config.vm.network :hostonly, "172.16.183.128"
-  config.vm.share_folder("vhosts", "/mnt/vhosts", "../../vhosts", :nfs => true)
+  config.vm.share_folder("vhosts", "/mnt/vhosts", "../../../vhosts", :nfs => true)
   config.vm.share_folder("tmp", "/mnt/tmp", "/tmp", :nfs => true)
 
   # If you want to specify the host OS, create a file 'platform'
@@ -12,7 +12,7 @@ Vagrant::Config.run do |config|
 
   if platform == 'windows'
     config.vm.forward_port(80, 9458)
-    config.vm.share_folder("vhosts", "/mnt/vhosts", "../../vhosts", :nfs => false, :owner => "apache", :group => "apache")
+    config.vm.share_folder("vhosts", "/mnt/vhosts", "../../../vhosts", :nfs => false, :owner => "apache", :group => "apache")
     config.vm.share_folder("tmp", "/mnt/tmp", ENV['TEMP'], :nfs => false)
   elsif platform == 'darwin'
     config.vm.share_folder("tmp", "/mnt/tmp", "/Volumes/Storage/tmp", :nfs => true)
