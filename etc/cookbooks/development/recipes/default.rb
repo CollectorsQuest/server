@@ -1,6 +1,8 @@
 # development cookbook
 
+require_recipe "subversion"
 require_recipe "memcached"
+
 require_recipe "development::zend"
 require_recipe "development::vhosts"
 require_recipe "development::gearman"
