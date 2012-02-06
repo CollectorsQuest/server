@@ -1,5 +1,6 @@
-/logs/*.log
-/vhosts/*.dev
-/vhosts/collectorsquest.com/*
-/vhosts/cqcdns.com/*
-/etc/sphinx.running.conf
+logs/*.log
+logs/sphinx/*.log
+vhosts/*.dev
+vhosts/collectorsquest.com/*
+vhosts/cqcdns.com/*
+etc/sphinx.running.conf
