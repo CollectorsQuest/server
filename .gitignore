@@ -4,3 +4,9 @@ vhosts/*.dev
 vhosts/collectorsquest.com/*
 vhosts/cqcdns.com/*
 etc/sphinx.running.conf
+
+# Vagrant
+/etc/vagrant/.vagrant
+/etc/vagrant/platform
+/etc/vagrant/id_rsa
+
