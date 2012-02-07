@@ -19,6 +19,8 @@
   RewriteCond %{HTTP_HOST} ^collectorsquest.dev$ [NC]
   RewriteRule ^/(.*)$ http://www.collectorsquest.dev/$1 [R=301,L]
 
+  Alias /uploads  "/www/vhosts/collectorsquest.com/shared/uploads"
+
   <Directory "/www/vhosts/collectorsquest.dev/current/web">
     AllowOverride All
     Allow from All

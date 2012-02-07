@@ -20,6 +20,8 @@
   RewriteCond %{HTTP_HOST} ^collectorsquest.com$ [NC]
   RewriteRule ^/(.*)$ http://www.collectorsquest.com/$1 [R=301,L]
 
+  Alias /uploads  "/www/vhosts/collectorsquest.com/shared/uploads"
+
   <Directory "/www/vhosts/collectorsquest.com/current/web">
     Options +FollowSymLinks
     AllowOverride All
