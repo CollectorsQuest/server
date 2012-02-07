@@ -19,7 +19,8 @@
   RewriteCond %{HTTP_HOST} ^collectorsquest.dev$ [NC]
   RewriteRule ^/(.*)$ http://www.collectorsquest.dev/$1 [R=301,L]
 
-  Alias /uploads  "/www/vhosts/collectorsquest.com/shared/uploads"
+  Alias /uploads  "/www/vhosts/collectorsquest.dev/shared/uploads"
+  Alias /sf       "/www/vhosts/collectorsquest.dev/current/lib/vendor/symfony/data/web/sf"
 
   <Directory "/www/vhosts/collectorsquest.dev/current/web">
     AllowOverride All
