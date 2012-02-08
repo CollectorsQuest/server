@@ -22,6 +22,14 @@
 
   Alias /uploads  "/www/vhosts/collectorsquest.com/shared/uploads"
 
+  ExpiresActive on
+  ExpiresByType application/javascript "access plus 1 months"
+  ExpiresByType image/jpg "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType text/css "access plus 1 months"
+
   <Directory "/www/vhosts/collectorsquest.com/current/web">
     Options +FollowSymLinks
     AllowOverride All
