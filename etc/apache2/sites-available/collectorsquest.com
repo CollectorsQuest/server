@@ -20,6 +20,14 @@
   RewriteCond %{HTTP_HOST} ^collectorsquest.com$ [NC]
   RewriteRule ^/(.*)$ http://www.collectorsquest.com/$1 [R=301,L]
 
+  ExpiresActive on
+  ExpiresByType application/javascript "access plus 1 months"
+  ExpiresByType image/jpg "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType text/css "access plus 1 months"
+
   Alias /uploads  "/www/vhosts/collectorsquest.com/shared/uploads"
 
   ExpiresActive on
