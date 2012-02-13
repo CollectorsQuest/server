@@ -1,6 +1,3 @@
-[submodule "vendor/statsd"]
-	path = vendor/statsd
-	url = git@github.com:CollectorsQuest/statsd.git
 [submodule "libs/symfony-1.4.x"]
 	path = libs/symfony-1.4.x
 	url = git://github.com/symfony/symfony1.git
