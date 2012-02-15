@@ -16,6 +16,7 @@ template "/etc/hosts" do
   mode "0644"
 end
 
+package "sendmail"
 package "graphviz"
 package "rubygems"
 
