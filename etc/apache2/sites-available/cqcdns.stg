@@ -1,0 +1,51 @@
+<VirtualHost *:80>
+  ServerName  cqcdns.stg
+
+  DocumentRoot "/www/vhosts/cqcdns.com/staging/web"
+  DirectoryIndex index.html index.php
+
+  ErrorLog /dev/null
+  CustomLog /dev/null common
+
+  ServerSignature Off
+
+  <Directory "/www/vhosts/cqcdns.com/staging/web">
+    Options -Indexes 
+    Allow from All
+  </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+  ServerName  assets.cqcdns.stg
+
+  DocumentRoot "/www/vhosts/cqcdns.com/staging/iceAssetsPlugin/web"
+  DirectoryIndex index.html index.php
+
+  ErrorLog /dev/null
+  CustomLog /dev/null common
+
+  ServerSignature Off
+
+  <Directory "/www/vhosts/cqcdns.com/staging/iceAssetsPlugin/web">
+    Options -Indexes
+    Allow from All
+  </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+  ServerName  backend.cqcdns.stg
+
+  DocumentRoot "/www/vhosts/cqcdns.com/staging/iceBackendPlugin/web"
+  DirectoryIndex index.html index.php
+
+  ErrorLog /dev/null
+  CustomLog /dev/null common
+
+  ServerSignature Off
+
+  <Directory "/www/vhosts/cqcdns.com/staging/iceBackendPlugin/web">
+    Options -Indexes
+    Allow from All
+  </Directory>
+</VirtualHost>
+
