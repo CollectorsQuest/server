@@ -4,3 +4,6 @@
 [submodule "vendor/statsd"]
 	path = vendor/statsd
 	url = git@github.com:CollectorsQuest/statsd.git
+[submodule "libs/aws"]
+	path = libs/aws
+	url = git://github.com/amazonwebservices/aws-sdk-for-php.git
