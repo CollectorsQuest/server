@@ -9,6 +9,9 @@
 
   ServerSignature Off
 
+  Alias /assets/  /www/vhosts/cqcdns.com/staging/iceAssetsPlugin/web/
+  Alias /backend/ /www/vhosts/cqcdns.com/staging/iceBackendPlugin/web/
+
   <Directory "/www/vhosts/cqcdns.com/staging/web">
     Options -Indexes 
     Allow from All
