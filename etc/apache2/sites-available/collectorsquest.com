@@ -11,8 +11,8 @@
   ErrorDocument 500 /errors/500.html
   ErrorDocument 404 /errors/404.html
 
-  SetEnv  SF_APP  frontend
-  SetEnv  SF_ENV  prod 
+  SetEnv  SF_APP  legacy
+  SetEnv  SF_ENV  prod
 
   ServerSignature Off
 
@@ -85,6 +85,9 @@
 
   DocumentRoot "/www/vhosts/collectorsquest.com/current/web"
   DirectoryIndex multimedia.php
+
+  SetEnv  SF_APP  legacy
+  SetEnv  SF_ENV  prod
 
   <Directory "/www/vhosts/collectorsquest.com/current/web">
     AllowOverride None

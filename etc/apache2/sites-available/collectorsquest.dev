@@ -12,7 +12,7 @@
   ErrorDocument 500 /errors/500.html
   ErrorDocument 404 /errors/404.html
 
-  SetEnv  SF_APP  frontend
+  SetEnv  SF_APP  legacy
   SetEnv  SF_ENV  dev
 
   RewriteEngine On
@@ -63,6 +63,9 @@
 
   DocumentRoot "/www/vhosts/collectorsquest.dev/current/web"
   DirectoryIndex multimedia.php
+
+  SetEnv  SF_APP  legacy
+  SetEnv  SF_ENV  dev
 
   <Directory "/www/vhosts/collectorsquest.dev/current/web">
     AllowOverride None

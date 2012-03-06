@@ -59,6 +59,9 @@
   DocumentRoot "/www/vhosts/collectorsquest.com/staging/web"
   DirectoryIndex multimedia.php
 
+  SetEnv  SF_APP  legacy
+  SetEnv  SF_ENV  stg
+
   <Directory "/www/vhosts/collectorsquest.com/staging/web">
     AllowOverride None
     Allow from All

@@ -30,6 +30,9 @@
   DocumentRoot "/www/vhosts/collectorsquest.com/next/web"
   DirectoryIndex multimedia.php
 
+  SetEnv  SF_APP  frontend
+  SetEnv  SF_ENV  next
+
   <Directory "/www/vhosts/collectorsquest.com/next/web">
     AllowOverride None
     Allow from All
