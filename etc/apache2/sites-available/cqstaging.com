@@ -19,6 +19,14 @@
   RewriteRule ^/(.*)$ http://www.cqstaging.com/$1 [R=301,L]
 
   <Directory "/www/vhosts/collectorsquest.com/staging/web">
+    
+    AuthType Basic
+    AuthName "By Invitation Only"
+    AuthBasicProvider file
+    AuthUserFile /www/etc/apache2/htpassd
+    AuthGroupFile /www/etc/apache2/htgroups
+    Require group CollectorsQuestTeam
+
     AllowOverride All
     Allow from All
   </Directory>
