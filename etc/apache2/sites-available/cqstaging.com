@@ -23,7 +23,7 @@
     AuthType Basic
     AuthName "By Invitation Only"
     AuthBasicProvider file
-    AuthUserFile /www/etc/apache2/htpassd
+    AuthUserFile /www/etc/apache2/htpasswd
     AuthGroupFile /www/etc/apache2/htgroups
     Require group CollectorsQuestTeam
 
