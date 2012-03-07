@@ -19,7 +19,6 @@
   RewriteRule ^/(.*)$ http://www.cqstaging.com/$1 [R=301,L]
 
   <Directory "/www/vhosts/collectorsquest.com/staging/web">
-    
     AuthType Basic
     AuthName "By Invitation Only"
     AuthBasicProvider file

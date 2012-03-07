@@ -33,7 +33,7 @@
 </VirtualHost>
 
 <VirtualHost *:80>
-  ServerAlias backend.collectorsquest.dev
+  ServerName  backend.collectorsquest.dev
   ServerAlias backend.collectorsquest.local
 
   DocumentRoot "/www/vhosts/collectorsquest.dev/current/web"
@@ -48,9 +48,8 @@
   SetEnv  SF_APP  backend
   SetEnv  SF_ENV  dev
 
-  RewriteEngine On
-  RewriteCond %{HTTP_HOST} ^collectorsquest.dev$ [NC]
-  RewriteRule ^/(.*)$ http://www.collectorsquest.dev/$1 [R=301,L]
+  Alias /uploads  "/www/vhosts/collectorsquest.dev/shared/uploads"
+  Alias /sf       "/www/vhosts/collectorsquest.dev/current/lib/vendor/symfony/data/web/sf"
 
   <Directory "/www/vhosts/collectorsquest.dev/current/web">
     AllowOverride All
@@ -59,7 +58,8 @@
 </VirtualHost>
 
 <VirtualHost *:80>
-  ServerName  multimedia.collectorsquest.dev
+  ServerName   multimedia.collectorsquest.dev
+  ServerAlias  multimedia.collectorsquest.local
 
   DocumentRoot "/www/vhosts/collectorsquest.dev/current/web"
   DirectoryIndex multimedia.php
@@ -80,3 +80,4 @@
     XSendFilePath /www/vhosts/collectorsquest.com/shared
   </Files>
 </VirtualHost>
+
