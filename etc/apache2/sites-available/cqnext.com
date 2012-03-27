@@ -18,6 +18,9 @@
   RewriteCond %{HTTP_HOST} ^cqnext.com$ [NC]
   RewriteRule ^/(.*)$ http://www.cqnext.com/$1 [R=301,L]
 
+  Alias /assets   "/www/vhosts/collectorsquest.com/next/plugins/iceAssetsPlugin/web"
+  Alias /uploads  "/www/vhosts/collectorsquest.com/shared/uploads"
+
   <Directory "/www/vhosts/collectorsquest.com/next/web">
     AllowOverride All
     Allow from All
@@ -66,5 +69,25 @@
     XSendFile on
     XSendFilePath /www/vhosts/collectorsquest.com/shared
   </Files>
+</VirtualHost>
+
+<VirtualHost *:80>
+  ServerName  next.cqcdns.com
+
+  DocumentRoot "/www/vhosts/cqcdns.com/next/web"
+  DirectoryIndex index.html index.php
+
+  ErrorLog /dev/null
+  CustomLog /dev/null common
+
+  ServerSignature Off
+
+  Alias /assets/  /www/vhosts/cqcdns.com/next/iceAssetsPlugin/web/
+  Alias /backend/ /www/vhosts/cqcdns.com/next/iceBackendPlugin/web/
+
+  <Directory "/www/vhosts/cqcdns.com/next/web">
+    Options -Indexes
+    Allow from All
+  </Directory>
 </VirtualHost>
 

@@ -18,7 +18,13 @@
   RewriteCond %{HTTP_HOST} ^cqstaging.com$ [NC]
   RewriteRule ^/(.*)$ http://www.cqstaging.com/$1 [R=301,L]
 
-  <Directory "/www/vhosts/collectorsquest.com/staging/web">
+  <Directory /www/vhosts/collectorsquest.com/staging/web>
+    Order allow,deny
+    AllowOverride All
+    Allow from All
+  </Directory>
+
+  <Location />
     AuthType Basic
     AuthName "By Invitation Only"
     AuthBasicProvider file
@@ -26,9 +32,11 @@
     AuthGroupFile /www/etc/apache2/htgroups
     Require group CollectorsQuestTeam
 
-    AllowOverride All
-    Allow from All
-  </Directory>
+    Allow from 207.237.37.24
+    Allow from 95.87.220.50
+    Satisfy Any
+  </Location>
+
 </VirtualHost>
 
 <VirtualHost *:80>
@@ -73,5 +81,25 @@
     XSendFile on
     XSendFilePath /www/vhosts/collectorsquest.com/shared
   </Files>
+</VirtualHost>
+
+<VirtualHost *:80>
+  ServerName  staging.cqcdns.com
+
+  DocumentRoot "/www/vhosts/cqcdns.com/staging/web"
+  DirectoryIndex index.html index.php
+
+  ErrorLog /dev/null
+  CustomLog /dev/null common
+
+  ServerSignature Off
+
+  Alias /assets/  /www/vhosts/cqcdns.com/staging/iceAssetsPlugin/web/
+  Alias /backend/ /www/vhosts/cqcdns.com/staging/iceBackendPlugin/web/
+
+  <Directory "/www/vhosts/cqcdns.com/staging/web">
+    Options -Indexes
+    Allow from All
+  </Directory>
 </VirtualHost>
 

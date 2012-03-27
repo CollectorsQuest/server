@@ -42,6 +42,7 @@
     Options +FollowSymLinks
     AllowOverride All
     Order allow,deny
+    Deny from 76.95.135.99
     Allow from all
   </Directory>
 
@@ -91,7 +92,9 @@
 
   <Directory "/www/vhosts/collectorsquest.com/current/web">
     AllowOverride None
-    Allow from All
+    Order allow,deny
+    Deny from 76.95.135.99
+    Allow from all    
 
     RewriteEngine On
     RewriteRule ^(.*)$ multimedia.php [QSA,L]
