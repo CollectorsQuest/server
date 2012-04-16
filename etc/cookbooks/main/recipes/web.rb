@@ -1,12 +1,13 @@
 # web cookbook
 
 require_recipe "zend"
-require_recipe "zend::xsendfile"
 require_recipe "zend::browscap"
-require_recipe "zend::passenger"
+require_recipe "zend::geoip"
 require_recipe "zend::modperl"
+require_recipe "zend::passenger"
 # require_recipe "zend::gearman"
 require_recipe "zend::xhprof"
+require_recipe "zend::xsendfile"
 
 # require_recipe "zend::functional"
 # require_recipe "zend::scached"
