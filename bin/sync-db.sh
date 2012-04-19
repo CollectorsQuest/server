@@ -23,5 +23,5 @@ mysqldump -h master.cwvkronpbfrx.us-east-1.rds.amazonaws.com -usync -p4muNB6D47A
 
 echo "Fixing collectorsquest_dev.wp_options..."
 echo "UPDATE wp_options SET option_value = 'http://www.collectorsquest.dev/blog' WHERE option_id = '1';" | mysql -u root -D collectorsquest_dev
-echo "UPDATE wp_options SET option_value = 'http://www.collectorsquest.com/blog' WHERE option_id = '40';" | mysql -u root -D collectorsquest_dev
+echo "UPDATE wp_options SET option_value = 'http://www.collectorsquest.dev/blog' WHERE option_id = '40';" | mysql -u root -D collectorsquest_dev
 
