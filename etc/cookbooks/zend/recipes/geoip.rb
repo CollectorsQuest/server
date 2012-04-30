@@ -9,6 +9,6 @@ execute "Install GeoIP PHP module" do
 end
 
 template "/usr/local/zend/etc/conf.d/geoip.ini" do
-  source "translit.ini"
+  source "geoip.ini"
   mode "0664"
 end

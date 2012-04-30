@@ -1,2 +1,7 @@
 package "libgearman"
 package "libgearman-devel"
+package "boost"
+package "boost-devel"
+package "libevent"
+package "libevent-devel"
+pacakge "libuuid-devel"
