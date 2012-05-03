@@ -1,39 +1,4 @@
 <VirtualHost *:80>
-  ServerName  collectorsquest.dev
-  ServerAlias www.collectorsquest.dev
-  ServerAlias www.collectorsquest.local
-
-  DocumentRoot "/www/vhosts/collectorsquest.dev/current/web"
-  DirectoryIndex index.php
-
-  CustomLog /var/log/apache2/collectorsquest.com.access.log common
-  ErrorLog /var/log/apache2/collectorsquest.com.error.log
-
-  ErrorDocument 500 /errors/500.html
-  ErrorDocument 404 /errors/404.html
-
-  SetEnv  SF_APP  legacy
-  SetEnv  SF_ENV  dev
-
-  RewriteEngine On
-  RewriteCond %{HTTP_HOST} ^collectorsquest.dev$ [NC]
-  RewriteRule ^/(.*)$ http://www.collectorsquest.dev/$1 [R=301,L]
-
-  Alias /assets   "/www/vhosts/collectorsquest.dev/current/plugins/iceAssetsPlugin/web"
-  Alias /uploads  "/www/vhosts/collectorsquest.dev/shared/uploads"
-  Alias /sf       "/www/vhosts/collectorsquest.dev/current/lib/vendor/symfony/data/web/sf"
-
-  <Directory "/www/vhosts/collectorsquest.dev/current/web">
-    AllowOverride All
-    Allow from All
-  </Directory>
-
-  <Directory "/www/vhosts/collectorsquest.dev/*/web/xhprof">
-    Deny from all
-  </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
   ServerName  backend.collectorsquest.dev
   ServerAlias backend.collectorsquest.local
 
@@ -84,3 +49,37 @@
   </Files>
 </VirtualHost>
 
+<VirtualHost *:80>
+  ServerName    collectorsquest.dev
+  ServerAlias *.collectorsquest.dev
+  ServerAlias *.collectorsquest.local
+
+  DocumentRoot "/www/vhosts/collectorsquest.dev/current/web"
+  DirectoryIndex index.php
+
+  CustomLog /var/log/apache2/collectorsquest.com.access.log common
+  ErrorLog /var/log/apache2/collectorsquest.com.error.log
+
+  ErrorDocument 500 /errors/500.html
+  ErrorDocument 404 /errors/404.html
+
+  SetEnv  SF_APP  legacy
+  SetEnv  SF_ENV  dev
+
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^collectorsquest.dev$ [NC]
+  RewriteRule ^/(.*)$ http://www.collectorsquest.dev/$1 [R=301,L]
+
+  Alias /assets   "/www/vhosts/collectorsquest.dev/current/plugins/iceAssetsPlugin/web"
+  Alias /uploads  "/www/vhosts/collectorsquest.dev/shared/uploads"
+  Alias /sf       "/www/vhosts/collectorsquest.dev/current/lib/vendor/symfony/data/web/sf"
+
+  <Directory "/www/vhosts/collectorsquest.dev/current/web">
+    AllowOverride All
+    Allow from All
+  </Directory>
+
+  <Directory "/www/vhosts/collectorsquest.dev/*/web/xhprof">
+    Deny from all
+  </Directory>
+</VirtualHost>

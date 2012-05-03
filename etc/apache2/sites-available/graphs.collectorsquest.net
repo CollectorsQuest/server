@@ -9,7 +9,7 @@ NameVirtualHost *:80
 # in this file to your chosen install location.
 
 <VirtualHost *:80>
-    ServerName graphs.collectorsquest.com
+    ServerName graphs.collectorsquest.net
     DocumentRoot "/usr/share/graphite-web/webapp"
 
     ErrorLog /dev/null

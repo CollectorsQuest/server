@@ -1,7 +1,7 @@
 <VirtualHost *:80>
   # Change this to the domain which points to your host, i.e. the domain
   # you set as "phabricator.base-uri".
-  ServerName phabricator.collectorsquest.com
+  ServerName phabricator.collectorsquest.net
 
   ErrorLog /dev/null
   CustomLog /dev/null combined

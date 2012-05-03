@@ -1,5 +1,5 @@
 <VirtualHost *:80>
-  ServerName deploy.collectorsquest.com
+  ServerName  deploy.collectorsquest.net
   ServerAlias deploy.collectorsquest.dev
 
   ErrorLog /dev/null

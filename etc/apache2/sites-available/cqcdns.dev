@@ -1,22 +1,4 @@
 <VirtualHost *:80>
-  ServerName  cqcdns.dev
-
-  DocumentRoot "/www/vhosts/cqcdns.dev/web"
-  DirectoryIndex index.html index.php
-
-  CustomLog /var/log/apache2/cqcdns.com.access.log common
-  ErrorLog /var/log/apache2/cqcdns.com.error.log
-
-  Alias /assets/  /www/vhosts/cqcdns.dev/iceAssetsPlugin/web/
-  Alias /backend/ /www/vhosts/cqcdns.dev/iceBackendPlugin/web/
-
-  <Directory "/www/vhosts/cqcdns.dev/web">
-    Options -Indexes 
-    Allow from All
-  </Directory>
-</VirtualHost>
-
-<VirtualHost *:80>
   ServerName  assets.cqcdns.dev
 
   DocumentRoot "/www/vhosts/cqcdns.dev/iceAssetsPlugin/web"
@@ -46,3 +28,21 @@
   </Directory>
 </VirtualHost>
 
+<VirtualHost *:80>
+  ServerName    cqcdns.dev
+  ServerAlias *.cqcdns.dev
+
+  DocumentRoot "/www/vhosts/cqcdns.dev/web"
+  DirectoryIndex index.html index.php
+
+  CustomLog /var/log/apache2/cqcdns.com.access.log common
+  ErrorLog /var/log/apache2/cqcdns.com.error.log
+
+  Alias /assets/  /www/vhosts/cqcdns.dev/iceAssetsPlugin/web/
+  Alias /backend/ /www/vhosts/cqcdns.dev/iceBackendPlugin/web/
+
+  <Directory "/www/vhosts/cqcdns.dev/web">
+    Options -Indexes 
+    Allow from All
+  </Directory>
+</VirtualHost>
