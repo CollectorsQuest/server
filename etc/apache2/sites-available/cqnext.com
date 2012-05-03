@@ -72,22 +72,3 @@
   </Directory>
 </VirtualHost>
 
-<VirtualHost *:80>
-  ServerName  next.cqcdns.com
-
-  DocumentRoot "/www/vhosts/cqcdns.com/next/web"
-  DirectoryIndex index.html index.php
-
-  ErrorLog /dev/null
-  CustomLog /dev/null common
-
-  ServerSignature Off
-
-  Alias /assets/  /www/vhosts/cqcdns.com/next/iceAssetsPlugin/web/
-  Alias /backend/ /www/vhosts/cqcdns.com/next/iceBackendPlugin/web/
-
-  <Directory "/www/vhosts/cqcdns.com/next/web">
-    Options -Indexes
-    Allow from All
-  </Directory>
-</VirtualHost>

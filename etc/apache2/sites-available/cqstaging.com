@@ -83,23 +83,3 @@
 
 </VirtualHost>
 
-<VirtualHost *:80>
-  ServerName  staging.cqcdns.com
-
-  DocumentRoot "/www/vhosts/cqcdns.com/staging/web"
-  DirectoryIndex index.html index.php
-
-  ErrorLog /dev/null
-  CustomLog /dev/null common
-
-  ServerSignature Off
-
-  Alias /assets/  /www/vhosts/cqcdns.com/staging/iceAssetsPlugin/web/
-  Alias /backend/ /www/vhosts/cqcdns.com/staging/iceBackendPlugin/web/
-
-  <Directory "/www/vhosts/cqcdns.com/staging/web">
-    Options -Indexes
-    Allow from All
-  </Directory>
-</VirtualHost>
-
