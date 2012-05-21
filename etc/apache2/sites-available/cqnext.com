@@ -70,5 +70,18 @@
     AllowOverride All
     Allow from All
   </Directory>
+
+  <Location />
+    AuthType Basic
+    AuthName "By Invitation Only"
+    AuthBasicProvider file
+    AuthUserFile /www/etc/apache2/htpasswd
+    AuthGroupFile /www/etc/apache2/htgroups
+    Require group CollectorsQuestTeam
+
+    Allow from 207.237.37.24
+    Allow from 95.87.220.50
+    Satisfy Any
+  </Location>
 </VirtualHost>
 
