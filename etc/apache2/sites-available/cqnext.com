@@ -68,10 +68,12 @@
 
   <Directory "/www/vhosts/collectorsquest.com/next/web">
     AllowOverride All
-    Allow from All
   </Directory>
 
   <Location />
+    Order deny,allow
+    Deny from all
+
     AuthType Basic
     AuthName "By Invitation Only"
     AuthBasicProvider file

@@ -63,12 +63,13 @@
   RewriteRule ^/(.*)$ http://www.cqstaging.com/$1 [R=301,L]
 
   <Directory /www/vhosts/collectorsquest.com/staging/web>
-    Order allow,deny
     AllowOverride All
-    Allow from All
   </Directory>
 
   <Location />
+    Order deny,allow
+    Deny from all
+
     AuthType Basic
     AuthName "By Invitation Only"
     AuthBasicProvider file
