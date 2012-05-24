@@ -79,6 +79,11 @@
 
     Allow from 207.237.37.24
     Allow from 95.87.220.50
+    
+    Allow from 184.73.239.190
+    Allow from 10.196.0.0/16
+    Allow from localhost
+    Allow from 127.0.0.1
     Satisfy Any
   </Location>
 
