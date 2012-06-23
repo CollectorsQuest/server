@@ -17,6 +17,11 @@
 # limitations under the License.
 #
 
+template "/etc/yum.repos.d/zend.repo" do
+  mode "0644"
+end
+
+package "zend-server-ce-php-5.3"
 package "php-5.3-memcache-zend-server"
 package "php-5.3-imagick-zend-server"
 package "php-5.3-thrift-zend-server"
@@ -34,10 +39,10 @@ directory "/usr/local/zend/var/apps/http/collectorsquest.com" do
   action :create
 end
 
-link "/usr/local/zend/var/apps/http/collectorsquest.com/80" do
-  to "/www/vhosts/collectorsquest.com/releases"
-  not_if "test -L /usr/local/zend/var/apps/http/collectorsquest.com/80"
-end
+# link "/usr/local/zend/var/apps/http/collectorsquest.com/80" do
+#   to "/www/vhosts/collectorsquest.com/releases"
+#   not_if "test -L /usr/local/zend/var/apps/http/collectorsquest.com/80"
+# end
 
 service "zend" do
   service_name "zend-server"

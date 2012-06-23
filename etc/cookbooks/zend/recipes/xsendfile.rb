@@ -14,6 +14,6 @@ end
 
 bash "Build and Install mod_xsendfile" do
   cwd "/tmp/mod_xsendfile-0.12"
-  code "apxs2 -cia mod_xsendfile.c"
+  code "apxs -cia mod_xsendfile.c"
   not_if { ::File.exists?("/usr/lib/httpd/modules/mod_xsendfile.so") }
 end
