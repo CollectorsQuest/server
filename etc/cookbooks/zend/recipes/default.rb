@@ -33,8 +33,8 @@ end
 
 directory "/usr/local/zend/var/apps/http/collectorsquest.com" do
   recursive true
-  owner "zend"
-  group "zend"
+  owner "apache"
+  group "apache"
   mode "0755"
   action :create
 end

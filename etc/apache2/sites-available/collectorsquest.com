@@ -20,7 +20,7 @@
   RewriteCond %{HTTP_HOST} ^collectorsquest.com$ [NC]
   RewriteRule ^/(.*)$ http://www.collectorsquest.com/$1 [R=301,L]
 
-  Alias /assets   "/www/vhosts/collectorsquest.com/next/plugins/iceAssetsPlugin/web"
+  Alias /assets   "/www/vhosts/collectorsquest.com/current/plugins/iceAssetsPlugin/web"
   Alias /uploads  "/www/vhosts/collectorsquest.com/shared/uploads"
 
   <Directory "/www/vhosts/collectorsquest.com/current/web">
@@ -97,7 +97,7 @@
   ExpiresByType image/png "access plus 1 month"
   ExpiresByType text/css "access plus 1 months"
 
-  Alias /assets   "/www/vhosts/collectorsquest.com/next/plugins/iceAssetsPlugin/web"
+  Alias /assets   "/www/vhosts/collectorsquest.com/current/plugins/iceAssetsPlugin/web"
   Alias /uploads  "/www/vhosts/collectorsquest.com/shared/uploads"
 
   <Directory "/www/vhosts/collectorsquest.com/current/web">
