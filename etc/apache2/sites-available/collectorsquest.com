@@ -20,6 +20,9 @@
   RewriteCond %{HTTP_HOST} ^collectorsquest.com$ [NC]
   RewriteRule ^/(.*)$ http://www.collectorsquest.com/$1 [R=301,L]
 
+  Alias /assets   "/www/vhosts/collectorsquest.com/next/plugins/iceAssetsPlugin/web"
+  Alias /uploads  "/www/vhosts/collectorsquest.com/shared/uploads"
+
   <Directory "/www/vhosts/collectorsquest.com/current/web">
     AllowOverride All
     Allow from All
@@ -35,7 +38,7 @@
   DocumentRoot "/www/vhosts/collectorsquest.com/current/web"
   DirectoryIndex multimedia.php
 
-  SetEnv  SF_APP  legacy
+  SetEnv  SF_APP  frontend
   SetEnv  SF_ENV  prod
 
   <Directory "/www/vhosts/collectorsquest.com/current/web">
@@ -56,7 +59,7 @@
 
 <VirtualHost *:80>
   ServerName    collectorsquest.com
-	ServerAlias *.collectorsquest.com
+  ServerAlias *.collectorsquest.com
 
   DocumentRoot "/www/vhosts/collectorsquest.com/current/web"
   DirectoryIndex index.php
@@ -67,14 +70,15 @@
   ErrorDocument 500 /errors/500.html
   ErrorDocument 404 /errors/404.html
 
-  SetEnv  SF_APP  legacy
+  SetEnv  SF_APP  frontend
   SetEnv  SF_ENV  prod
 
   ServerSignature Off
 
   RewriteEngine On
-  RewriteCond %{HTTP_HOST} ^collectorsquest.com$ [NC]
-  RewriteRule ^/(.*)$ http://www.collectorsquest.com/$1 [R=301,L]
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP_HOST} !^www\.collectorsquest.+$ [NC]
+  RewriteRule ^ http://www.collectorsquest.com%{REQUEST_URI} [R=301,L]
 
   ExpiresActive on
   ExpiresByType application/javascript "access plus 1 months"
@@ -84,21 +88,20 @@
   ExpiresByType image/png "access plus 1 month"
   ExpiresByType text/css "access plus 1 months"
 
+
+  ExpiresActive on
+  ExpiresByType application/javascript "access plus 1 months"
+  ExpiresByType image/jpg "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType text/css "access plus 1 months"
+
+  Alias /assets   "/www/vhosts/collectorsquest.com/next/plugins/iceAssetsPlugin/web"
   Alias /uploads  "/www/vhosts/collectorsquest.com/shared/uploads"
 
-  ExpiresActive on
-  ExpiresByType application/javascript "access plus 1 months"
-  ExpiresByType image/jpg "access plus 1 month"
-  ExpiresByType image/jpeg "access plus 1 month"
-  ExpiresByType image/gif "access plus 1 month"
-  ExpiresByType image/png "access plus 1 month"
-  ExpiresByType text/css "access plus 1 months"
-
   <Directory "/www/vhosts/collectorsquest.com/current/web">
-    Options +FollowSymLinks
     AllowOverride All
-    Order allow,deny
-    Deny from 76.95.135.99
     Allow from all
   </Directory>
 
