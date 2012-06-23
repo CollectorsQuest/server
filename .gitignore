@@ -1,9 +1,16 @@
-logs/*.log
-logs/sphinx/*.log
+# Vhosts
 vhosts/*.dev
+vhosts/*.legacy
 vhosts/collectorsquest.com/*
 vhosts/cqcdns.com/*
+
+# Logs
+logs/*.log
+logs/sphinx/*.log
+
+# Sphinx
 etc/sphinx.running.conf
+etc/sphinx/conf.d/*
 
 # Vagrant
 /etc/vagrant/.vagrant
