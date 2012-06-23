@@ -22,3 +22,13 @@ bash "Build and Install mod_rpaf" do
   code "patch < /tmp/mod_rpaf_xforward_for.patch && apxs -i -c -n mod_rpaf-2.0.so mod_rpaf-2.0.c"
   not_if { ::File.exists?("/usr/lib/httpd/modules/mod_rpaf-2.0.so") }
 end
+
+template "/etc/httpd/conf.d/rpaf.conf" do
+  source "rpaf.conf"
+  mode "0644"
+end
+
+service "apache" do
+  action :restart
+end
+
