@@ -1,4 +1,5 @@
 template "/usr/local/zend/etc/conf.d/production.ini" do
+  source "production.ini"
   mode "0664"
 end
 
