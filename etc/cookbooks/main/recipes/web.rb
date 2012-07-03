@@ -32,6 +32,12 @@ bash "Install Symfony 1.4.x from PEAR" do
   EOH
 end
 
+bash "Set /www directory permissions" do
+  code <<-EOH
+    chown -R apache:apache /www/tmp
+  EOH
+end
+
 service "zend" do
   action :restart
 end
