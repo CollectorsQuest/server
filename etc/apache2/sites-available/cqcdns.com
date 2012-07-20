@@ -1,3 +1,29 @@
+<VirtualHost *:80>
+  ServerName  multimedia.cqcdns.com
+
+  ErrorLog /dev/null
+  CustomLog /dev/null common
+
+  DocumentRoot "/www/vhosts/collectorsquest.com/current/web"
+  DirectoryIndex multimedia.php
+
+  SetEnv  SF_APP  frontend
+  SetEnv  SF_ENV  prod
+
+  <Directory "/www/vhosts/collectorsquest.com/current/web">
+    AllowOverride None
+    Order allow,deny
+    Allow from all    
+
+    RewriteEngine On
+    RewriteRule ^(.*)$ multimedia.php [QSA,L]
+  </Directory>
+
+  <Files multimedia.php>
+    XSendFile on
+    XSendFilePath /www/vhosts/collectorsquest.com/shared
+  </Files>
+</VirtualHost>
 
 <VirtualHost *:80>
   ServerName  assets.cqcdns.com

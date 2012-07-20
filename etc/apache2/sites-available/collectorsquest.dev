@@ -32,7 +32,7 @@
   DocumentRoot "/www/vhosts/collectorsquest.dev/current/web"
   DirectoryIndex multimedia.php
 
-  SetEnv  SF_APP  legacy
+  SetEnv  SF_APP  frontend
   SetEnv  SF_ENV  dev
 
   <Directory "/www/vhosts/collectorsquest.dev/current/web">

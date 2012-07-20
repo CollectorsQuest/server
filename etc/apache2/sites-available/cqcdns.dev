@@ -1,4 +1,29 @@
 <VirtualHost *:80>
+  ServerName   multimedia.cqcdns.dev
+  ServerAlias  multimedia.cqcdns.local
+  ServerAlias  multimedia.cqcdns.next
+
+  DocumentRoot "/www/vhosts/collectorsquest.dev/current/web"
+  DirectoryIndex multimedia.php
+
+  SetEnv  SF_APP  frontend
+  SetEnv  SF_ENV  dev
+
+  <Directory "/www/vhosts/collectorsquest.dev/current/web">
+    AllowOverride None
+    Allow from All
+
+    RewriteEngine On
+    RewriteRule ^(.*)$ multimedia.php [QSA,L]
+  </Directory>
+
+  <Files multimedia.php>
+    XSendFile on
+    XSendFilePath /www/vhosts/collectorsquest.dev
+  </Files>
+</VirtualHost>
+
+<VirtualHost *:80>
   ServerName  assets.cqcdns.dev
 
   DocumentRoot "/www/vhosts/cqcdns.dev/iceAssetsPlugin/web"

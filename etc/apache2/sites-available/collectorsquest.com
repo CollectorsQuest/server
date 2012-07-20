@@ -44,7 +44,6 @@
   <Directory "/www/vhosts/collectorsquest.com/current/web">
     AllowOverride None
     Order allow,deny
-    Deny from 76.95.135.99
     Allow from all    
 
     RewriteEngine On
