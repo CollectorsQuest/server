@@ -44,7 +44,7 @@
   <Directory "/www/vhosts/collectorsquest.com/current/web">
     AllowOverride None
     Order allow,deny
-    Allow from all    
+    Allow from all
 
     RewriteEngine On
     RewriteRule ^(.*)$ multimedia.php [QSA,L]
