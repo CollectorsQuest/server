@@ -19,7 +19,7 @@
 
   <Files multimedia.php>
     XSendFile on
-    XSendFilePath /www/vhosts/collectorsquest.com
+    XSendFilePath /www/vhosts/collectorsquest.dev
   </Files>
 </VirtualHost>
 
