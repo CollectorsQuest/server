@@ -1,6 +1,6 @@
 Vagrant::Config.run do |config|
   config.vm.box = "collectorsquest"
-  config.vm.box_url = "http://collectorsquest.s3.amazonaws.com/virtualbox/collectorsquest.2012-02-06.box"
+  config.vm.box_url = "http://collectorsquest.s3.amazonaws.com/virtualbox/collectorsquest.2012-07-24.box"
 
   config.vm.network :hostonly, "172.16.183.128"
   config.vm.forward_port(80, 9458)
