@@ -76,7 +76,7 @@
 
   RewriteEngine On
   RewriteCond %{HTTPS} !=on
-  RewriteCond %{HTTP_HOST} !^www\.collectorsquest.+$ [NC]
+  RewriteCond %{HTTP_HOST} !^www\.collectorsquest\.com$ [NC]
   RewriteRule ^ http://www.collectorsquest.com%{REQUEST_URI} [R=301,L]
 
   ExpiresActive on

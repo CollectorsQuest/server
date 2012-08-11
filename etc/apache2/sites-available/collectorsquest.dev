@@ -53,6 +53,8 @@
   ServerName    collectorsquest.dev
   ServerAlias *.collectorsquest.dev
   ServerAlias *.collectorsquest.local
+  ServerAlias   221.58.193.147
+  ServerAlias   softbank221058193147.bbtec.net
 
   DocumentRoot "/www/vhosts/collectorsquest.dev/current/web"
   DirectoryIndex index.php
@@ -83,3 +85,4 @@
     Deny from all
   </Directory>
 </VirtualHost>
+
