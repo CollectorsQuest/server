@@ -4,11 +4,11 @@ link "/etc/httpd/conf.d/collectorsquest.dev.conf" do
   notifies :restart, "service[apache]"
 end
 
-link "/etc/httpd/conf.d/collectorsquest.legacy.conf" do
-  to "/www/etc/apache2/sites-available/collectorsquest.legacy"
-  not_if "test -L /etc/httpd/conf.d/collectorsquest.legacy.conf"
-  notifies :restart, "service[apache]"
-end
+# link "/etc/httpd/conf.d/collectorsquest.legacy.conf" do
+#   to "/www/etc/apache2/sites-available/collectorsquest.legacy"
+#   not_if "test -L /etc/httpd/conf.d/collectorsquest.legacy.conf"
+#   notifies :restart, "service[apache]"
+# end
 
 link "/etc/httpd/conf.d/cqcdns.dev.conf" do
   to "/www/etc/apache2/sites-available/cqcdns.dev"
@@ -31,29 +31,29 @@ link "/www/vhosts/collectorsquest.com/current" do
   not_if "test -L /www/vhosts/collectorsquest.com/current"
 end
 
-link "/www/vhosts/collectorsquest.legacy" do
-  to "/www/vhosts/collectorsquest.com"
-  not_if "test -L /www/vhosts/collectorsquest.legacy"
-end
+# link "/www/vhosts/collectorsquest.legacy" do
+#   to "/www/vhosts/collectorsquest.com"
+#   not_if "test -L /www/vhosts/collectorsquest.legacy"
+# end
 
-link "/www/vhosts/collectorsquest.com/releases/legacy" do
-  to "/mnt/vhosts/collectorsquest.legacy"
-  not_if "test -L /www/vhosts/collectorsquest.com/releases/legacy"
-end
+# link "/www/vhosts/collectorsquest.com/releases/legacy" do
+#   to "/mnt/vhosts/collectorsquest.legacy"
+#   not_if "test -L /www/vhosts/collectorsquest.com/releases/legacy"
+# end
 
-link "/www/vhosts/collectorsquest.com/legacy" do
-  to "/www/vhosts/collectorsquest.com/releases/legacy"
-  not_if "test -L /www/vhosts/collectorsquest.com/legacy"
-end
+# link "/www/vhosts/collectorsquest.com/legacy" do
+#   to "/www/vhosts/collectorsquest.com/releases/legacy"
+#   not_if "test -L /www/vhosts/collectorsquest.com/legacy"
+# end
+
+# link "/www/vhosts/collectorsquest.com/legacy/config/databases.yml" do
+#   to "/www/vhosts/collectorsquest.com/legacy/config/databases.dist.yml"
+#   not_if "test -e /www/vhosts/collectorsquest.com/legacy/config/databases.yml"
+# end
 
 link "/www/vhosts/collectorsquest.com/current/config/databases.yml" do
   to "/www/vhosts/collectorsquest.com/current/config/databases.dist.yml"
   not_if "test -e /www/vhosts/collectorsquest.com/current/config/databases.yml"
-end
-
-link "/www/vhosts/collectorsquest.com/legacy/config/databases.yml" do
-  to "/www/vhosts/collectorsquest.com/legacy/config/databases.dist.yml"
-  not_if "test -e /www/vhosts/collectorsquest.com/legacy/config/databases.yml"
 end
 
 link "/www/vhosts/cqcdns.dev" do
