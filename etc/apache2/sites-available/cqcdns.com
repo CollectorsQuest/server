@@ -1,6 +1,7 @@
 <VirtualHost *:80>
   ServerName   multimedia.cqcdns.com
   ServerAlias  d2qss72tiioiku.cloudfront.net
+  ServerAlias  multimedia-873635319.us-east-1.elb.amazonaws.com
 
   ErrorLog /dev/null
   CustomLog /dev/null common

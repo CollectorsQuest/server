@@ -60,6 +60,7 @@
   ServerName   collectorsquest.com
   ServerAlias  *.collectorsquest.com
   ServerAlias  d2y8496azcwpd6.cloudfront.net
+  ServerAlias  web-471984672.us-east-1.elb.amazonaws.com
 
   DocumentRoot "/www/vhosts/collectorsquest.com/current/web"
   DirectoryIndex index.php
