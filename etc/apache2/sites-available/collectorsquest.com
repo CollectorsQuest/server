@@ -59,6 +59,7 @@
 <VirtualHost *:80>
   ServerName   collectorsquest.com
   ServerAlias  *.collectorsquest.com
+  ServerAlias  static.collectorsquest.com
   ServerAlias  d2y8496azcwpd6.cloudfront.net
   ServerAlias  web-471984672.us-east-1.elb.amazonaws.com
 
@@ -78,6 +79,9 @@
 
   RewriteEngine On
   RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP_HOST} !cloudfront\.net [NC]
+  RewriteCond %{HTTP_HOST} !elb\.amazonaws\.com [NC]
+  RewriteCond %{HTTP_HOST} !^static\.collectorsquest\.com$ [NC]
   RewriteCond %{HTTP_HOST} !^www\.collectorsquest\.com$ [NC]
   RewriteRule ^ http://www.collectorsquest.com%{REQUEST_URI} [R=301,L]
 
