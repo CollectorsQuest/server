@@ -57,8 +57,9 @@
 </VirtualHost>
 
 <VirtualHost *:80>
-  ServerName    collectorsquest.com
-  ServerAlias *.collectorsquest.com
+  ServerName   collectorsquest.com
+  ServerAlias  *.collectorsquest.com
+  ServerAlias  d2y8496azcwpd6.cloudfront.net
 
   DocumentRoot "/www/vhosts/collectorsquest.com/current/web"
   DirectoryIndex index.php

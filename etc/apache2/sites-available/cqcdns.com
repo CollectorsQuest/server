@@ -1,5 +1,6 @@
 <VirtualHost *:80>
-  ServerName  multimedia.cqcdns.com
+  ServerName   multimedia.cqcdns.com
+  ServerAlias  d2qss72tiioiku.cloudfront.net
 
   ErrorLog /dev/null
   CustomLog /dev/null common
