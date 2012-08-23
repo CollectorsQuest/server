@@ -13,7 +13,7 @@ end
 
 execute "Extract mod_xsendfile source" do
   cwd "/tmp"
-  command "tar -zxf /tmp/mod_rpaf-0.6.tar.gz && /tmp/mod_rpaf-0.6 && patch < /tmp/mod_rpaf_xforward_for.patch"
+  command "tar -zxf /tmp/mod_rpaf-0.6.tar.gz && cd /tmp/mod_rpaf-0.6 && patch < /tmp/mod_rpaf_xforward_for.patch"
   not_if { ::File.exists?("/tmp/mod_rpaf-0.6") }
 end
 
