@@ -19,6 +19,8 @@ bash "Install lessc" do
   code <<-EOH
     npm install less
     npm install less -g
+    npm install clean-css
+    npm install clean-css -g
     gem install watchr
   EOH
 end
