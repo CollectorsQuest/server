@@ -6,7 +6,6 @@ Vagrant::Config.run do |config|
   config.vm.forward_port(80, 9458)
   config.vm.forward_port(443, 9459)
   config.vm.share_folder("vhosts", "/mnt/vhosts", "../../../vhosts", :nfs => true)
-  config.vm.share_folder("tmp", "/mnt/tmp", "/tmp", :nfs => true)
 
   # If you want to specify the host OS, create a file 'platform'
   # in the same directory as the .vagrant file.
