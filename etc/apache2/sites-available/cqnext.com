@@ -2,22 +2,8 @@
 <VirtualHost *:80>
   ServerAlias backend.cqnext.com
 
-  DocumentRoot "/www/vhosts/collectorsquest.com/next/web"
-  DirectoryIndex index.php
-
-  CustomLog /data/logs/apache2/cqnext.com.access.log common
-  ErrorLog /data/logs/apache2/cqnext.com.error.log
-
-  ErrorDocument 500 /errors/500.html
-  ErrorDocument 404 /errors/404.html
-
-  SetEnv  SF_APP  backend
-  SetEnv  SF_ENV  next
-
-  <Directory "/www/vhosts/collectorsquest.com/next/web">
-    AllowOverride All
-    Allow from All
-  </Directory>
+  RewriteEngine ON
+  RewriteRule ^(.*)$ http://www.cqnext.com/backend.php$1 [R=301,L]
 </VirtualHost>
 
 <VirtualHost *:80>

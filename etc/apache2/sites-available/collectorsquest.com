@@ -2,31 +2,8 @@
 <VirtualHost *:80>
   ServerAlias backend.collectorsquest.com
 
-  DocumentRoot "/www/vhosts/collectorsquest.com/current/web"
-  DirectoryIndex index.php
-
-  CustomLog /data/logs/apache2/collectorsquest.com.access.log common
-  ErrorLog /data/logs/apache2/collectorsquest.com.error.log
-
-  ErrorDocument 500 /errors/500.html
-  ErrorDocument 404 /errors/404.html
-
-  include /www/etc/apache2/auth.conf
-
-  SetEnv  SF_APP  backend
-  SetEnv  SF_ENV  prod
-
-  RewriteEngine On
-  RewriteCond %{HTTP_HOST} ^collectorsquest.com$ [NC]
-  RewriteRule ^/(.*)$ http://www.collectorsquest.com/$1 [R=301,L]
-
-  Alias /assets   "/www/vhosts/collectorsquest.com/current/plugins/iceAssetsPlugin/web"
-  Alias /uploads  "/www/vhosts/collectorsquest.com/shared/uploads"
-
-  <Directory "/www/vhosts/collectorsquest.com/current/web">
-    AllowOverride All
-    Allow from All
-  </Directory>
+  RewriteEngine ON
+  RewriteRule ^(.*)$ http://www.collectorsquest.com/backend.php$1 [R=301,L]
 </VirtualHost>
 
 <VirtualHost *:80>

@@ -2,26 +2,8 @@
   ServerName  backend.collectorsquest.dev
   ServerAlias backend.collectorsquest.local
 
-  DocumentRoot "/www/vhosts/collectorsquest.dev/current/web"
-  DirectoryIndex index.php
-
-  CustomLog /var/log/apache2/collectorsquest.com.access.log common
-  ErrorLog /var/log/apache2/collectorsquest.com.error.log
-
-  ErrorDocument 500 /errors/500.html
-  ErrorDocument 404 /errors/404.html
-
-  SetEnv  SF_APP  backend
-  SetEnv  SF_ENV  dev
-
-  Alias /assets   "/www/vhosts/collectorsquest.dev/current/plugins/iceAssetsPlugin/web"
-  Alias /uploads  "/www/vhosts/collectorsquest.dev/shared/uploads"
-  Alias /sf       "/www/vhosts/collectorsquest.dev/current/lib/vendor/symfony/data/web/sf"
-
-  <Directory "/www/vhosts/collectorsquest.dev/current/web">
-    AllowOverride All
-    Allow from All
-  </Directory>
+  RewriteEngine ON
+  RewriteRule ^(.*)$ http://www.collectorsquest.dev/backend.php$1 [R=301,L]
 </VirtualHost>
 
 <VirtualHost *:80>
