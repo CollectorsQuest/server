@@ -6,3 +6,12 @@ display_errors = On
 
 ; http://php.net/display-startup-errors
 display_startup_errors = On
+
+[Session]
+
+; http://php.net/session.save-handler
+session.save_handler = memcache
+
+; http://php.net/session.save-path
+session.save_path = "tcp://127.0.0.1:11211"
+

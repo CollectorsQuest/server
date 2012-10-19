@@ -1,3 +1,5 @@
+require_recipe "zend::rpaf"
+
 template "/usr/local/zend/etc/conf.d/production.ini" do
   source "production.ini"
   mode "0664"
@@ -15,4 +17,3 @@ directory "/data/logs/apache2" do
   recursive true
   action :create
 end
-

@@ -5,7 +5,6 @@ require_recipe "zend::browscap"
 require_recipe "zend::geoip"
 require_recipe "zend::modperl"
 require_recipe "zend::redis"
-require_recipe "zend::rpaf"
 require_recipe "zend::translit"
 require_recipe "zend::xhprof"
 require_recipe "zend::xsendfile"
@@ -20,6 +19,8 @@ bash "Install lessc" do
   code <<-EOH
     npm install less
     npm install less -g
+    npm install clean-css
+    npm install clean-css -g
     gem install watchr
   EOH
 end

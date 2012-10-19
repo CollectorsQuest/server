@@ -7,6 +7,7 @@ require_recipe "development::zend"
 require_recipe "development::vhosts"
 require_recipe "development::gearman"
 require_recipe "development::vim"
+require_recipe "development::timecards"
 
 service "apache" do
   action :restart

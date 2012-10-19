@@ -19,7 +19,7 @@ end
 bash "Checkout /www from GitHub" do
   code <<-EOH
     cd /www
-    git pull origin master
+    git pull --ff origin master
     git submodule update --recursive
   EOH
 end
