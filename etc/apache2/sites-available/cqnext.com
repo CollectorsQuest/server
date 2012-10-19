@@ -14,6 +14,9 @@
   SetEnv  SF_APP  backend
   SetEnv  SF_ENV  next
 
+  Alias /assets   "/www/vhosts/collectorsquest.com/next/plugins/iceAssetsPlugin/web"
+  Alias /uploads  "/www/vhosts/collectorsquest.com/shared/uploads"
+
   <Directory "/www/vhosts/collectorsquest.com/next/web">
     AllowOverride All
     Allow from All
