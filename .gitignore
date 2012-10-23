@@ -17,3 +17,5 @@ etc/sphinx/conf.d/*
 /etc/vagrant/platform
 /etc/vagrant/id_rsa
 
+# Nginx
+etc/nginx/sites-enabled/*
