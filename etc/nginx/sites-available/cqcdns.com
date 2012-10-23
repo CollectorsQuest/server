@@ -4,6 +4,8 @@ server {
   root         /www/vhosts/collectorsquest.com/current/web;
   index        multimedia.php;
 
+  error_log /dev/null crit;
+
   set  $sf_root_dir  /www/vhosts/collectorsquest.com/current;
   set  $sf_app       frontend;
   set  $sf_env       prod;
