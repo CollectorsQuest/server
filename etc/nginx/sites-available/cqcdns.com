@@ -1,6 +1,6 @@
 server {
   listen       81;
-  server_name  multimedia.cqcdns.com;
+  server_name  multimedia.cqcdns.com  Multimedia-873635319.us-east-1.elb.amazonaws.com;
   root         /www/vhosts/collectorsquest.com/current/web;
   index        multimedia.php;
 
