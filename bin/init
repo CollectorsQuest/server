@@ -1,0 +1,4 @@
+#!/bin/bash
+
+chef-solo -c /www/etc/cookbooks/solo.rb -j /www/etc/cookbooks/web.json /www/etc/cookbooks
+chef-solo -c /www/etc/cookbooks/solo.rb -j /www/etc/cookbooks/production.json /www/etc/cookbooks
