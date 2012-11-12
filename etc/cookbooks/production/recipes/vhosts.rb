@@ -27,7 +27,7 @@ end
 
 bash "Initialize collectorsquest.com" do
   code <<-EOH
-    cd /www/vhosts/collectorsquest.com/releases/master
+    cd /www/vhosts/collectorsquest.com/current
     ./console/init master
   EOH
 end
