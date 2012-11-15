@@ -37,6 +37,7 @@
   ServerAlias *.collectorsquest.local
   ServerAlias  manhattan.dyndns-office.com
   ServerAlias  astoria.dyndns-home.com
+  ServerAlias  paveldev1.asuscomm.com
 
   DocumentRoot "/www/vhosts/collectorsquest.dev/current/web"
   DirectoryIndex index.php
