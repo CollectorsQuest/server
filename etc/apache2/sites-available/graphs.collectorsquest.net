@@ -1,12 +1,10 @@
-# This needs to be in your server's config somewhere, probably
-# the main httpd.conf
-NameVirtualHost *:80
-
 # You may need to manually edit this file to fit your needs.
 # This configuration assumes the default installation prefix
 # of /opt/graphite/, if you installed graphite somewhere else
 # you will need to change all the occurances of /opt/graphite/
 # in this file to your chosen install location.
+
+WSGISocketPrefix /var/run/wsgi
 
 <VirtualHost *:80>
     ServerName graphs.collectorsquest.net
@@ -46,5 +44,23 @@ NameVirtualHost *:80
         Order deny,allow
         Allow from all
     </Directory>
+
+    <Location />
+      Order deny,allow
+      Deny from all
+
+      AuthType Basic
+      AuthName "For Developers Only"
+      AuthBasicProvider file
+      AuthUserFile /www/etc/apache2/htpasswd
+      AuthGroupFile /www/etc/apache2/htgroups
+      Require group Developers
+
+      Allow from 207.237.37.24
+      Allow from 10.196.0.0/16
+      Allow from localhost
+      Allow from 127.0.0.1
+      Satisfy Any
+    </Location>
 
 </VirtualHost>
