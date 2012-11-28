@@ -1,3 +1,6 @@
+package "dos2unix"
+
+
 link "/etc/httpd/conf.d/collectorsquest.dev.conf" do
   to "/www/etc/apache2/sites-available/collectorsquest.dev"
   not_if "test -L /etc/httpd/conf.d/collectorsquest.dev.conf"
