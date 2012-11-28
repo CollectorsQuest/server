@@ -31,6 +31,11 @@ link "/www/vhosts/collectorsquest.com/current" do
   not_if "test -L /www/vhosts/collectorsquest.com/current"
 end
 
+link "/www/etc/sphinx/conf.d/collectorsquest" do
+  to "/www/vhosts/collectorsquest.com/current/config/sphinx"
+  not_if "test -L /www/etc/sphinx/conf.d/collectorsquest"
+end
+
 # link "/www/vhosts/collectorsquest.legacy" do
 #   to "/www/vhosts/collectorsquest.com"
 #   not_if "test -L /www/vhosts/collectorsquest.legacy"
