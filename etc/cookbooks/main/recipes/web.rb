@@ -2,9 +2,6 @@
 
 require_recipe "zend"
 require_recipe "zend::browscap"
-require_recipe "zend::geoip"
-require_recipe "zend::modperl"
-require_recipe "zend::redis"
 require_recipe "zend::translit"
 require_recipe "zend::xhprof"
 require_recipe "zend::xsendfile"
@@ -14,9 +11,15 @@ require_recipe "zend::xsendfile"
 # require_recipe "zend::functional"
 # require_recipe "zend::scached"
 
+template "/etc/yum.repos.d/nodejs.repo" do
+  mode "0644"
+end
+
 package "npm"
 bash "Install lessc" do
   code <<-EOH
+    ln -s /usr/bin/nodejs /usr/bin/node
+
     npm install less
     npm install less -g
     npm install clean-css
@@ -33,9 +36,13 @@ bash "Install Symfony 1.4.x from PEAR" do
   EOH
 end
 
-bash "Set /www directory permissions" do
+bash "Update /www permissions" do
   code <<-EOH
+    chmod -R 777 /www/tmp
     chown -R apache:apache /www/tmp
+    chown -R apache:apache /www/logs
+    chown -R sphinx:sphinx /www/logs/sphinx
+    chown -R apache:apache /www/vhosts/collectorsquest.com/shared
   EOH
 end
 

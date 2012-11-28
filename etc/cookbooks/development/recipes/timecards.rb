@@ -1,19 +1,15 @@
 # Timecards
 
 package "perl-CPAN"
-
-bash "Install timecard dependencies" do
-  code <<-EOH
-    curl -L http://cpanmin.us | perl - --sudo App::cpanminus
-    cpanm DateTime
-  EOH
-  not_if "test -f /usr/local/lib/perl5/DateTime.pm"
-end
+package "perl-DateTime"
 
 bash "Checkout ~/.timecards from GitHub" do
   code <<-EOH
     git clone -q git@github.com:CollectorsQuest/timecards.git /root/.timecards
     cd /root/.timecards && git submodule update --recursive
+    ln -s /root/.timecards/bin/timecard /usr/local/bin/timecard
+    ln -s /root/.timecards/bin/clock /usr/local/bin/clock
+    rm /sbin/clock
   EOH
   not_if "test -d /root/.timecards"
 end

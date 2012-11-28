@@ -1,4 +1,6 @@
+package "mysql-server"
 package "phpmyadmin-zend-server-php-5.3"
+
 template "/usr/local/zend/gui/lighttpd/etc/lighttpd.conf" do
   notifies :restart, "service[zend]"
 end

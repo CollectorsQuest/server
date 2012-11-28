@@ -3,15 +3,15 @@
 # Recipe:: default
 #
 
-remote_file "/tmp/sphinx-2.0.5-1.rhel6.i386.rpm" do
-  source "http://sphinxsearch.com/files/sphinx-2.0.5-1.rhel6.i386.rpm"
-  not_if { ::File.exists?("/tmp/sphinx-2.0.5-1.rhel6.i386.rpm") }
+remote_file "/tmp/sphinx-2.0.6-1.rhel6.x86_64.rpm" do
+  source "http://sphinxsearch.com/files/sphinx-2.0.6-1.rhel6.x86_64.rpm"
+  not_if { ::File.exists?("/tmp/sphinx-2.0.6-1.rhel6.x86_64.rpm") }
 end
 
 execute "Install Sphinx" do
   cwd "/tmp"
-  command "rpm -iUv /tmp/sphinx-2.0.5-1.rhel6.i386.rpm"
-  not_if { ::File.exists?("/usr/bin/searchd") && system("/usr/bin/searchd -h | grep 'Sphinx 2.0.3-id64-release'") }
+  command "rpm -iUv /tmp/sphinx-2.0.6-1.rhel6.x86_64.rpm"
+  not_if { ::File.exists?("/usr/bin/searchd") && system("/usr/bin/searchd -h | grep 'Sphinx 2.0.6'") }
 end
 
 directory "/var/lib/sphinx" do
@@ -21,7 +21,42 @@ directory "/var/lib/sphinx" do
   action :create
 end
 
+directory "/var/lib/sphinx/blog_normalized" do
+  owner "sphinx"
+  group "sphinx"
+  mode "0755"
+  action :create
+end
+
 directory "/var/lib/sphinx/website" do
+  owner "sphinx"
+  group "sphinx"
+  mode "0755"
+  action :create
+end
+
+directory "/var/lib/sphinx/website/collectors_normalized" do
+  owner "sphinx"
+  group "sphinx"
+  mode "0755"
+  action :create
+end
+
+directory "/var/lib/sphinx/website/collections_normalized" do
+  owner "sphinx"
+  group "sphinx"
+  mode "0755"
+  action :create
+end
+
+directory "/var/lib/sphinx/website/collectibles_normalized" do
+  owner "sphinx"
+  group "sphinx"
+  mode "0755"
+  action :create
+end
+
+directory "/var/lib/sphinx/website/did_you_mean" do
   owner "sphinx"
   group "sphinx"
   mode "0755"

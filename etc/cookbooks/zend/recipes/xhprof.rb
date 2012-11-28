@@ -1,5 +1,9 @@
 include_recipe "zend"
 
+package "graphviz"
+package "autoconf"
+package "autoconf213"
+
 remote_file "/tmp/xhprof.tar.gz" do
   source "https://github.com/preinheimer/xhprof/archive/58ceef1a59e89eb44a932e767d04e2340521cd77.tar.gz"
   not_if { ::File.exists?("/tmp/xhprof.tar.gz") }

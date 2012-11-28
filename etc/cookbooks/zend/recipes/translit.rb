@@ -1,5 +1,8 @@
 include_recipe "zend"
 
+package "autoconf"
+package "autoconf213"
+
 execute "Install Translit PHP module" do
   command "/usr/local/zend/bin/pecl install channel://pecl.php.net/translit-0.6.1"
   not_if "test -e /usr/local/zend/lib/php_extensions/translit.so"

@@ -1,5 +1,13 @@
 # development cookbook
 
+template "/etc/yum.repos.d/epel.repo" do
+  mode "0644"
+end
+
+template "/etc/yum.repos.d/remi.repo" do
+  mode "0644"
+end
+
 require_recipe "subversion"
 require_recipe "memcached"
 
@@ -18,7 +26,6 @@ template "/etc/hosts" do
 end
 
 package "sendmail"
-package "graphviz"
 package "rubygems"
 
 bash "Install Capifony" do

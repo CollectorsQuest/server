@@ -1,3 +1,6 @@
+require_recipe "zend::geoip"
+require_recipe "zend::modperl"
+require_recipe "zend::redis"
 require_recipe "zend::rpaf"
 
 template "/usr/local/zend/etc/conf.d/production.ini" do
