@@ -69,3 +69,9 @@ link "/www/vhosts/cqcdns.dev" do
   not_if "test -L /www/vhosts/cqcdns.dev"
 end
 
+bash "Running dos2unix just-in-case" do
+  code <<-EOH
+    dos2unix /www/bin/*
+    dos2unix /www/vhosts/collectorsquest.com/current/console/*
+  EOH
+end

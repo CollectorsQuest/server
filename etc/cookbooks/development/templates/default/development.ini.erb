@@ -15,3 +15,15 @@ session.save_handler = memcache
 ; http://php.net/session.save-path
 session.save_path = "tcp://127.0.0.1:11211"
 
+; Whether to allow HTTP file uploads.
+; http://php.net/file-uploads
+file_uploads = On
+
+; Temporary directory for HTTP uploaded files (will use system default if not
+; specified).
+; http://php.net/upload-tmp-dir
+upload_tmp_dir = /www/tmp
+
+; Maximum allowed size for uploaded files.
+; http://php.net/upload-max-filesize
+upload_max_filesize = 10M
