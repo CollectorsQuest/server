@@ -1,7 +1,6 @@
 require_recipe "zend"
 
 package "autoconf"
-package "autoconf213"
 
 remote_file "/tmp/lucid-scached_0.90.6_i386.deb" do
   source "http://scache.nanona.fi/dl/lucid-scached_0.90.6_i386.deb"
