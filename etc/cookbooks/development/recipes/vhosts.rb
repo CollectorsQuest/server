@@ -1,3 +1,6 @@
+package "dos2unix"
+
+
 link "/etc/httpd/conf.d/collectorsquest.dev.conf" do
   to "/www/etc/apache2/sites-available/collectorsquest.dev"
   not_if "test -L /etc/httpd/conf.d/collectorsquest.dev.conf"
@@ -31,6 +34,11 @@ link "/www/vhosts/collectorsquest.com/current" do
   not_if "test -L /www/vhosts/collectorsquest.com/current"
 end
 
+link "/www/etc/sphinx/conf.d/collectorsquest" do
+  to "/www/vhosts/collectorsquest.com/current/config/sphinx"
+  not_if "test -L /www/etc/sphinx/conf.d/collectorsquest"
+end
+
 # link "/www/vhosts/collectorsquest.legacy" do
 #   to "/www/vhosts/collectorsquest.com"
 #   not_if "test -L /www/vhosts/collectorsquest.legacy"
@@ -61,3 +69,9 @@ link "/www/vhosts/cqcdns.dev" do
   not_if "test -L /www/vhosts/cqcdns.dev"
 end
 
+bash "Running dos2unix just-in-case" do
+  code <<-EOH
+    dos2unix /www/bin/*
+    dos2unix /www/vhosts/collectorsquest.com/current/console/*
+  EOH
+end

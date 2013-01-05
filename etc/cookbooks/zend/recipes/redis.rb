@@ -1,7 +1,6 @@
 include_recipe "zend"
 
 package "autoconf"
-package "autoconf213"
 
 remote_file "/tmp/redis.tar.gz" do
   source "https://github.com/nicolasff/phpredis/tarball/2.2.1"
