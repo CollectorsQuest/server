@@ -42,7 +42,7 @@
   SetEnv  SF_ENV  dev
 
   <Directory "/www/vhosts/local.collectorsquest.dev/current/web">
-    AllowOverride None
+    AllowOverride All
     Allow from All
   </Directory>
 </VirtualHost>
