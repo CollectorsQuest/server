@@ -32,6 +32,22 @@
 </VirtualHost>
 
 <VirtualHost *:80>
+  ServerName   local.collectorsquest.dev
+  ServerAlias  local.collectorsquest.local
+
+  DocumentRoot "/www/vhosts/local.collectorsquest.dev/current/web"
+  DirectoryIndex app.php
+
+  SetEnv  SF_APP  frontend
+  SetEnv  SF_ENV  dev
+
+  <Directory "/www/vhosts/local.collectorsquest.dev/current/web">
+    AllowOverride None
+    Allow from All
+  </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
   ServerName    collectorsquest.dev
   ServerAlias *.collectorsquest.dev
   ServerAlias *.collectorsquest.local
