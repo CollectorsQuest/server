@@ -26,6 +26,7 @@ bash "Install lessc" do
     npm install clean-css -g
     gem install watchr
   EOH
+  not_if "which less && which watchr"
 end
 
 bash "Install Symfony 1.4.x from PEAR" do
