@@ -20,8 +20,8 @@ bash "Install lessc" do
   code <<-EOH
     ln -s /usr/bin/nodejs /usr/bin/node
 
-    npm install less
-    npm install less -g
+    npm install less@1.3.3
+    npm install less@1.3.3 -g
     npm install clean-css
     npm install clean-css -g
     gem install watchr
