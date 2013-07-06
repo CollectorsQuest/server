@@ -1,4 +1,4 @@
-require_recipe "zend"
+include_recipe "zend"
 
 package "autoconf"
 

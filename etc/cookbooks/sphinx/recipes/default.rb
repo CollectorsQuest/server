@@ -3,15 +3,15 @@
 # Recipe:: default
 #
 
-remote_file "/tmp/sphinx-2.0.6-1.rhel6.x86_64.rpm" do
-  source "http://sphinxsearch.com/files/sphinx-2.0.6-1.rhel6.x86_64.rpm"
-  not_if { ::File.exists?("/tmp/sphinx-2.0.6-1.rhel6.x86_64.rpm") }
+remote_file "/tmp/sphinx-2.1.1-1.rhel6.x86_64.rpm" do
+  source "http://sphinxsearch.com/files/sphinx-2.1.1-1.rhel6.x86_64.rpm"
+  not_if { ::File.exists?("/tmp/sphinx-2.1.1-1.rhel6.x86_64.rpm") }
 end
 
 execute "Install Sphinx" do
   cwd "/tmp"
-  command "rpm -iUv /tmp/sphinx-2.0.6-1.rhel6.x86_64.rpm"
-  not_if { ::File.exists?("/usr/bin/searchd") && system("/usr/bin/searchd -h | grep 'Sphinx 2.0.6'") }
+  command "rpm -iUv /tmp/sphinx-2.1.1-1-1.rhel6.x86_64.rpm"
+  not_if { ::File.exists?("/usr/bin/searchd") && system("/usr/bin/searchd -h | grep 'Sphinx 2.1.1'") }
 end
 
 directory "/var/lib/sphinx" do

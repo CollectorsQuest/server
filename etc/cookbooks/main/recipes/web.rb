@@ -1,15 +1,15 @@
 # web cookbook
 
-require_recipe "zend"
-require_recipe "zend::browscap"
-require_recipe "zend::translit"
-require_recipe "zend::xhprof"
-require_recipe "zend::xsendfile"
+include_recipe "zend"
+include_recipe "zend::browscap"
+include_recipe "zend::translit"
+include_recipe "zend::xhprof"
+include_recipe "zend::xsendfile"
 
-# require_recipe "zend::gearman"
-# require_recipe "zend::passenger"
-# require_recipe "zend::functional"
-# require_recipe "zend::scached"
+# include_recipe "zend::gearman"
+# include_recipe "zend::passenger"
+# include_recipe "zend::functional"
+# include_recipe "zend::scached"
 
 template "/etc/yum.repos.d/nodejs.repo" do
   mode "0644"

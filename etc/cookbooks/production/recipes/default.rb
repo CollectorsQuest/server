@@ -1,12 +1,12 @@
 # development cookbook
 
-require_recipe "memcached"
-require_recipe "nginx"
-require_recipe "nginx::php-fastcgi"
+include_recipe "memcached"
+include_recipe "nginx"
+include_recipe "nginx::php-fastcgi"
 
-require_recipe "production::zend"
-require_recipe "production::vhosts"
-require_recipe "production::nfs"
+include_recipe "production::zend"
+include_recipe "production::vhosts"
+include_recipe "production::nfs"
 
 template "/etc/hosts" do
   mode "0644"

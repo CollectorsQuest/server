@@ -8,14 +8,14 @@ template "/etc/yum.repos.d/remi.repo" do
   mode "0644"
 end
 
-require_recipe "subversion"
-require_recipe "memcached"
+include_recipe "subversion"
+include_recipe "memcached"
 
-require_recipe "development::zend"
-require_recipe "development::vhosts"
-require_recipe "development::gearman"
-require_recipe "development::vim"
-require_recipe "development::timecards"
+include_recipe "development::zend"
+include_recipe "development::vhosts"
+include_recipe "development::gearman"
+include_recipe "development::vim"
+include_recipe "development::timecards"
 
 service "apache" do
   action :restart

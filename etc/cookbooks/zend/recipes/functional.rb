@@ -1,4 +1,4 @@
-require_recipe "zend"
+include_recipe "zend"
 
 execute "Install Gearman PHP module" do
   command "/usr/local/zend/bin/pecl install channel://pecl.php.net/functional-0.0.6"
