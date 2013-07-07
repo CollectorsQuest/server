@@ -10,7 +10,7 @@ end
 
 execute "Install Sphinx" do
   cwd "/tmp"
-  command "rpm -iUv /tmp/sphinx-2.1.1-1-1.rhel6.x86_64.rpm"
+  command "rpm -iUv /tmp/sphinx-2.1.1-1.rhel6.x86_64.rpm"
   not_if { ::File.exists?("/usr/bin/searchd") && system("/usr/bin/searchd -h | grep 'Sphinx 2.1.1'") }
 end
 
